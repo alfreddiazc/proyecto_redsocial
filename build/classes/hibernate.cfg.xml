@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Hibernate configuration file, here is were we set up hibernate db collection 
+	and mapping between classes and database tables. -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/sitio</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+
+		<property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="hibernate.show_sql">false</property>
+
+		<property name="hbm2ddl.auto">validate</property>
+
+		<mapping class="com.mvc.bean.Usuario" />
+		<mapping class="com.mvc.bean.Tipousuario" />
+		<mapping class="com.mvc.bean.Adicional" />
+		<mapping class="com.mvc.bean.Rol" />
+		
+
+	</session-factory>
+
+</hibernate-configuration>
