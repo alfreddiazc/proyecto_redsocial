@@ -7,9 +7,15 @@ package Negocio;
 
 import Dao.AmistadJpaController;
 import Dao.Conexion;
+import Dao.PublicacionJpaController;
 import Dao.UsuarioJpaController;
 import Dto.Amistad;
+import Dto.Publicacion;
 import Dto.Usuario;
+import java.io.InputStream;
+import java.sql.Blob;
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -81,5 +87,10 @@ public class Shadiagram {
 
     public List<Amistad> getseguidos(Usuario u) {
         return u.getAmistadList();
+    }
+    
+    public void insertarImagen(String path,String u){
+        PublicacionJpaController pgc= new PublicacionJpaController(con.getBd());
+        Publicacion p = new Publicacion();
     }
 }

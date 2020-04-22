@@ -23,6 +23,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -40,6 +41,12 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Publicacion.findByFechapublicacion", query = "SELECT p FROM Publicacion p WHERE p.fechapublicacion = :fechapublicacion"),
     @NamedQuery(name = "Publicacion.findByAcceso", query = "SELECT p FROM Publicacion p WHERE p.acceso = :acceso")})
 public class Publicacion implements Serializable {
+
+    @Basic(optional = false)
+    @NotNull
+    @Lob
+    @Column(name = "imagen")
+    private byte[] imagen;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -63,6 +70,13 @@ public class Publicacion implements Serializable {
     @JoinColumn(name = "usuario", referencedColumnName = "id")
     @ManyToOne
     private Usuario usuario;
+
+    public Publicacion(byte[] imagen, String descripcion, Usuario usuario) {
+        this.imagen = imagen;
+        this.descripcion = descripcion;
+        this.usuario = usuario;
+    }
+    
 
     public Publicacion() {
     }
@@ -152,6 +166,14 @@ public class Publicacion implements Serializable {
     @Override
     public String toString() {
         return "Dto.Publicacion[ id=" + id + " ]";
+    }
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
     }
     
 }

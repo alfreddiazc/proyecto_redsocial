@@ -12,6 +12,10 @@
         <servlet-name>amista</servlet-name>
         <servlet-class>Controller.amista</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>imagen</servlet-name>
+        <servlet-class>Controller.imagen</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrar</servlet-name>
         <url-pattern>/registrar</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>amista</servlet-name>
         <url-pattern>/amista</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>imagen</servlet-name>
+        <url-pattern>/imagen</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
