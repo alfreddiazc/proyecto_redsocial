@@ -40,7 +40,6 @@ public class buscar extends HttpServlet {
         Shadiagram s=new Shadiagram();
         Usuario u =s.buscar(n,p);
         if(u!=null){
-            System.out.println("entro");
             request.getSession().setAttribute("u", u);
             request.getRequestDispatcher("newjsp.jsp").forward(request, response);
         }

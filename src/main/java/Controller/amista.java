@@ -33,10 +33,10 @@ public class amista extends HttpServlet {
             throws ServletException, IOException {
        
         String n=request.getParameter("amigo");
-         String u=request.getParameter("usuario");
+        String u=request.getParameter("usuario");
         Shadiagram s=new Shadiagram();
         s.registraAmigo(u,n);
-        
+        request.getRequestDispatcher("newjsp.jsp").forward(request, response);
         
     }
 

@@ -36,9 +36,7 @@ public class Shadiagram {
         lu=uj.findUsuarioEntities();
         
         for(Usuario u : lu){
-            System.out.println(u.getUsuario()+" , "+u.getPass());
-            System.out.println(n+" , "+ p);
-            if((u.getUsuario()==n) && (u.getPass() == p)){
+            if((u.getUsuario().equals(n)) && (u.getPass().equals(p))){
                 return u;
             }
         }
