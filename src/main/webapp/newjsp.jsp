@@ -25,7 +25,8 @@
             <input aria-describedby="emailHelp" name="usuario" class="form-control" value="<%=u.getUsuario()%>" placeholder="..." type="hidden">
             <button type="submit">agregar</button>
         </form>
+            <form action="amista.jsp"><button type="submit" >siguiendo</button></form>
             
-            <a href="amista.jsp">siguiendo</a>
+            
     </body>
 </html>

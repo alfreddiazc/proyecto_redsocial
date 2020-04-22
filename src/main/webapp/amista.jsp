@@ -17,13 +17,11 @@
     </head>
     <body>
         
-        <%!Shadiagram s;
-        Usuario u=s.buscar2("victor");
-
-        List<Amistad> a=u.getAmistadList();
+        <%  Usuario user= (Usuario) request.getSession().getAttribute("u");
+        List<Amistad> la=user.getAmistadList();
         %>
         
-        <%for (Amistad as : a) {
+        <%for (Amistad as : la) {
               %> <h1> <%=as.getAmistad()%></h1> 
               <%
             }

@@ -36,6 +36,9 @@ public class amista extends HttpServlet {
         String u=request.getParameter("usuario");
         Shadiagram s=new Shadiagram();
         s.registraAmigo(u,n);
+        Usuario ure =s.buscar2(u);
+        request.getSession().getAttribute("u");
+        request.getSession().setAttribute("u", ure);
         request.getRequestDispatcher("newjsp.jsp").forward(request, response);
         
     }
