@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>registrar</servlet-name>
+        <servlet-class>Controller.registrar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>buscar</servlet-name>
+        <servlet-class>Controller.buscar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>amista</servlet-name>
+        <servlet-class>Controller.amista</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrar</servlet-name>
+        <url-pattern>/registrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>buscar</servlet-name>
+        <url-pattern>/buscar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>amista</servlet-name>
+        <url-pattern>/amista</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
