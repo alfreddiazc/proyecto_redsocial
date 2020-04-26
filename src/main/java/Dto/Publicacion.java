@@ -5,6 +5,7 @@
  */
 package Dto;
 
+import com.mysql.cj.jdbc.Blob;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -47,7 +48,6 @@ public class Publicacion implements Serializable {
     @Lob
     @Column(name = "imagen")
     private byte[] imagen;
-
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -142,6 +142,7 @@ public class Publicacion implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+    
 
     @Override
     public int hashCode() {

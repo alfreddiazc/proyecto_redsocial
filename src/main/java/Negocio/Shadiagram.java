@@ -61,6 +61,16 @@ public class Shadiagram {
         }
         return null;
     }
+    public  Publicacion buscarPublicacion(Usuario u){
+        PublicacionJpaController pjc=new PublicacionJpaController(con.getBd());
+        List<Publicacion> lp=pjc.findPublicacionEntities();
+        for (Publicacion publicacion : lp) {
+            if(publicacion.getUsuario().equals(u)){
+                return publicacion;
+            }
+        }
+        return null;
+    }
 
     public void registraAmigo(String u, String n) {
         UsuarioJpaController uj = new UsuarioJpaController(con.getBd());
@@ -89,8 +99,9 @@ public class Shadiagram {
         return u.getAmistadList();
     }
     
-    public void insertarImagen(String path,String u){
+    public void insertarImagen(Publicacion p){
         PublicacionJpaController pgc= new PublicacionJpaController(con.getBd());
-        Publicacion p = new Publicacion();
+        pgc.create(p);
+        
     }
 }

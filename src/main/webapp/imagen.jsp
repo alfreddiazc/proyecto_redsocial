@@ -17,7 +17,7 @@
     <fieldset>
        <legend>Formulario de subida</legend>
        <input type="file" name="files" id="files" multiple/>
-        <button type="submit">Subir</button>   
+       <button type="submit">Subir</button>   
     </fieldset>
 </form>
     </body>

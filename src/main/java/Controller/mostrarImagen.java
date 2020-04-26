@@ -5,29 +5,22 @@
  */
 package Controller;
 
-import Dao.PublicacionJpaController;
-import Negocio.Shadiagram;
 import Dto.Publicacion;
 import Dto.Usuario;
-import java.io.DataInputStream;
+import Negocio.Shadiagram;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.Collection;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 
 /**
  *
  * @author USUARIO
  */
-@MultipartConfig(location="D:/img")
-public class imagen extends HttpServlet {
-
+public class mostrarImagen extends HttpServlet {
+    Shadiagram s=new Shadiagram();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,7 +34,6 @@ public class imagen extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -56,7 +48,11 @@ public class imagen extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String id=request.getParameter("id");
+        Usuario u=s.buscar2(id);
+        Publicacion p=s.buscarPublicacion(u);
+        byte [] foto=p.getImagen();
+        response.getOutputStream().write(foto);
     }
 
     /**
@@ -71,30 +67,7 @@ public class imagen extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        String u=request.getParameter("u");
-        Usuario ur= new Usuario();
-        ur.setUsuario(u);
-        Publicacion p=new Publicacion();
-        p.setUsuario(ur);
-        Part part = request.getPart("fileFoto");
-        
-        int fotosize= (int) part.getSize();
-        byte [] foto=null;
-         
-        if(fotosize>0){
-            try {
-                foto=new byte[fotosize];
-                DataInputStream dis=new  DataInputStream(part.getInputStream());
-                dis.readFully(foto);
-                p.setImagen(foto);
-                Shadiagram s=new Shadiagram();
-                s.insertarImagen(p);
-            } catch (Exception e) {
-            }
-        }
-        request.getRequestDispatcher("mostrarImagen.jsp").forward(request, response);
     }
-   
 
     /**
      * Returns a short description of the servlet.

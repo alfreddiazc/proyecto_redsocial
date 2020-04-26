@@ -16,6 +16,14 @@
         <servlet-name>imagen</servlet-name>
         <servlet-class>Controller.imagen</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>mostrarImagen</servlet-name>
+        <servlet-class>Controller.mostrarImagen</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerImagen</servlet-name>
+        <servlet-class>Controller.ControllerImagen</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrar</servlet-name>
         <url-pattern>/registrar</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>imagen</servlet-name>
         <url-pattern>/imagen</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mostrarImagen</servlet-name>
+        <url-pattern>/mostrarImagen</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerImagen</servlet-name>
+        <url-pattern>/ControllerImagen</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
