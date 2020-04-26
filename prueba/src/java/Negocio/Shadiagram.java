@@ -105,5 +105,7 @@ public class Shadiagram {
         Publicacion p = new Publicacion();
         
     }
+    
+    //principal
 }
 

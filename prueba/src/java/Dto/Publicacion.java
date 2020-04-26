@@ -40,6 +40,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Publicacion.findByAcceso", query = "SELECT p FROM Publicacion p WHERE p.acceso = :acceso")})
 public class Publicacion implements Serializable {
 
+    //declaracion de variables
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
