@@ -1,0 +1,39 @@
+header{
+	background: #2c3e50;
+	color: #000000;
+}
+.bg-fondo{
+	background: #2c3e50;
+}
+.mb-5, .my-5 {
+    margin-bottom: 1rem!important;
+}
+.main{
+	max-height: 600px;
+	height: 400px;
+	background: #f2f2f2;
+
+}
+.color1{
+	background: #34495e;
+	color: #fff;
+
+}
+
+aside{
+	background: #c0392b;
+	color: #fff;
+}
+footer{
+	background: #2c3e50;
+	color: #fff;
+}
+.textBotom{
+	padding-top: 8%;
+}
+.textBotom2{
+	padding-top: 14%;
+}
+.dropleft{
+	font-size: 10px;
+}
